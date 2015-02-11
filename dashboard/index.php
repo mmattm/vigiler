@@ -25,7 +25,7 @@ include 'header.php';
                                 </div>
                             </div>
                         </div>
-                        <a href="./concurrence.html">
+                        <a href="./concurrence.php">
                             <div class="panel-footer">
                                 <span class="pull-left">View Details</span>
                                 <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
@@ -47,7 +47,7 @@ include 'header.php';
                                 </div>
                             </div>
                         </div>
-                        <a href="./image.html">
+                        <a href="./image.php">
                             <div class="panel-footer">
                                 <span class="pull-left">View Details</span>
                                 <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
@@ -69,7 +69,7 @@ include 'header.php';
                                 </div>
                             </div>
                         </div>
-                        <a href="./technologie.html">
+                        <a href="./technologie.php">
                             <div class="panel-footer">
                                 <span class="pull-left">View Details</span>
                                 <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
@@ -91,7 +91,7 @@ include 'header.php';
                                 </div>
                             </div>
                         </div>
-                        <a href="./protection.html">
+                        <a href="./protection.php">
                             <div class="panel-footer">
                                 <span class="pull-left">View Details</span>
                                 <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
