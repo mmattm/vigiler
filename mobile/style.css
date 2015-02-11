@@ -1,0 +1,297 @@
+body {
+	font-family: 'Noto Sans', sans-serif;
+}
+
+.app {
+	width: 285px;
+	height: 490px;
+	background-color: #FFF;
+	padding-top: 12px;
+	width: 100%;
+}
+
+.content {
+	padding: 10px;
+	padding-top: 0px;
+	width: 100%;
+
+}
+
+.switch {
+	height: 50px;
+	width: 200px;
+	text-align: left;
+	clear: both;
+	margin-left: 40px;
+
+}
+#notify {
+	background: rgba(17, 6, 41, .9);
+	 z-index: 10000;
+	 position: absolute;
+	 width: 300px;
+	 height: 400px;
+	 top:80px;
+	 color: #fff;
+	 text-align: center;
+	 display: none;
+	 
+}
+#notify .ios7-switch  {
+	font-size: 34px;
+}
+#notify span.label {
+	font-size: 14px;
+}
+.header {
+	background-color: #FFF;
+	width:100%;
+	height:40px;
+	border-bottom: 1px solid #e2e2e2;
+	text-align: center;
+	margin-bottom: 10px;
+	width: 100%;
+}
+
+.header img {
+	width:140px;
+}
+
+div.photo {
+	position:absolute;
+	background: #fff;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	width:275px;
+	height:365px;
+	border:1px solid #a6a9aa;
+	border-radius: 8px;
+	background-size: cover;
+	background-repeat: no-repeat;
+	box-shadow: 0px 1px 7px 0px #cfcfcf;
+}
+
+span.meta {
+	display: block;
+	height:48px;
+	background-color: #FFF;
+	margin-top: 10px;
+	border-radius: 0px 0px 8px 8px;
+	font-size: 18px;
+	box-sizing:border-box;
+	padding: 12px;
+}
+
+span.meta span {
+	float: right;
+	color:#cfcfcf;
+}
+
+.users {
+	display: block;
+	width: 20px;
+	background: url(http://web.arjentienkamp.com/codepen/tinder/users.png);
+	background-size: 20px;
+	background-repeat: no-repeat;
+	padding-left: 30px;
+	background-position: 5px;
+}
+
+.twitter {
+	display: block;
+	width: 35px;
+	height: 60px;
+	background: url(src/twitter.png);
+	background-size: 60px;
+	background-repeat: no-repeat;
+	padding-left: 35px;
+	background-position: 0px;
+	margin-top: -35px;
+}
+.blue {
+	color:#5e23e0;
+	font-weight: 700;
+}
+
+.feedmessage {
+	height: 268px;
+	margin-bottom: 40px;
+	font-size: 20px;
+	width: 100%;
+	display: block;
+
+	 overflow: hidden;
+	  text-overflow: ellipsis;
+	
+}
+span.feedmessage div.inner {
+	padding: 20px;
+}
+
+.chat {
+	display: block;
+	width: 34px;
+	height: 30px;
+	background: url(http://web.arjentienkamp.com/codepen/tinder/chat.png);
+	background-size: 30px;
+	background-repeat: no-repeat;
+	padding-left: 4px;
+	background-position: 5px;
+	float: right;
+	margin-top: 0px;
+}
+
+.settings {
+	display: block;
+	width: 34px;
+	height: 30px;
+	background: url(http://web.arjentienkamp.com/codepen/tinder/settings.png);
+	background-size: 30px;
+	background-repeat: no-repeat;
+	padding-left: 4px;
+	background-position: 5px;
+	float: left;
+	margin-top: 0px;
+}
+
+.footer {
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 368px;
+	width: 100%;
+	padding-left: 5px;
+	padding-top: 6px;
+}
+
+.rate {
+	width: 60px;
+	height:60px;
+	border-radius: 70px;
+	background: #FFF;
+	border: 5px solid #f0f0f0;
+	float: left;
+	box-shadow: 1px 1px 1px 0px #e9e9e9;
+}
+
+.rate:nth-child(1) {
+	margin-left: 4px;
+	background: url(src/strategy.png);
+	background-size: 40px;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
+
+.rate:nth-child(2) {
+	margin-left: -4px;
+	background: url(src/image.png);
+	background-size: 40px;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
+.rate:nth-child(3) {
+	margin-left: -4px;
+	background: url(src/tech.png);
+	background-size: 40px;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
+.rate:nth-child(4) {
+	margin-left: -4px;
+	background: url(src/employees.png);
+	background-size: 40px;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
+.info {
+	width: 40px;
+	height: 40px;
+	border-radius: 40px;
+	background: #FFF;
+	border: 5px solid #f0f0f0;
+	float: left;
+	box-shadow: 1px 1px 1px 0px #e9e9e9;
+	margin-top: 14px;
+	margin-left: -4px;
+
+	background: url(http://web.arjentienkamp.com/codepen/tinder/info.png);
+	background-size: 15px;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
+p {
+	padding:0;
+	margin:0;
+	float: left;
+}
+
+
+
+
+.button {
+  border: 0 none;
+  border-radius: 2px 2px 2px 2px;
+  color: #FFFFFF;
+  cursor: pointer;
+  display: inline-block;
+  font-family: Arial,sans-serif;
+  font-size: 12px;
+  font-weight: bold;
+  line-height: 20px;
+  margin-bottom: 0;
+  margin-top: 30px;
+  padding: 7px 10px;
+  text-transform: none;
+  transition: all 0.3s ease 0s;
+  -moz-transition: all 0.3s ease 0s;
+  -webkit-transition: all 0.3s ease 0s;
+  width: 56.795%;
+  /* auto */
+  text-align: center;
+  /* DELETE WHEN WIDTH AUTO */
+}
+.button.red {
+  background: none repeat scroll 0 0 #E0645C;
+  color: #FFFFFF;
+}
+.button.red:hover {
+  background: none repeat scroll 0 0 #999999;
+  color: #FFFFFF;
+}
+.button.dark {
+  background: none repeat scroll 0 0 #444444;
+  color: #FFFFFF;
+}
+.button.dark:hover {
+  background: none repeat scroll 0 0 #2DB6CF;
+  color: #FFFFFF;
+}
+.button.light {
+  background: none repeat scroll 0 0 #999999;
+  color: #FFFFFF;
+}
+.button.light:hover {
+  background: none repeat scroll 0 0 #444444;
+  color: #FFFFFF;
+}
+.button.green {
+  background: none repeat scroll 0 0 #46b98a;
+  color: #FFFFFF;
+}
+.button.green:hover {
+  background: none repeat scroll 0 0 #444444;
+  color: #FFFFFF;
+}
+.button.blue {
+  background: none repeat scroll 0 0 #5e23e0;
+  color: #FFFFFF;
+}
+.button.blue:hover {
+  background: none repeat scroll 0 0 #444444;
+  color: #FFFFFF;
+}
