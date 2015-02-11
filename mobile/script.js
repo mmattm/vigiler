@@ -22,6 +22,7 @@ $(document).ready(function(event) {
 	$(".rate").click(function(){
 		$("#notify").slideToggle();
 		selectedCategory = $(this).attr('veille-id');
+		console.log(selectedCategory);
 	});
 
 	// SAVE
@@ -29,7 +30,9 @@ $(document).ready(function(event) {
 		var eventsholded = [];
 
 		$( ".spec" ).each(function( index, element ) {
-			eventsholded[index] = parseInt($(this).prop('checked'));
+			var checkboxStatus = $(this).prop('checked') ? 1 : 0;
+			eventsholded[index] = checkboxStatus;
+			
 		});
 
 		var now = new Date().getTime()
