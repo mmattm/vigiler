@@ -19,14 +19,14 @@ $(document).ready(function(event) {
 	});
 
 
-	$(".rate").click(function(){
-		$("#notify").slideToggle();
+	$(".rate").bind('touchstart', function(){
+		$("#notify").stop().slideToggle();
 		selectedCategory = $(this).attr('veille-id');
 		console.log(selectedCategory);
 	});
 
 	// SAVE
-	$(".notifybutton").click(function(){
+	$(".notifybutton").bind('touchstart', function(){
 		var eventsholded = [];
 
 		$( ".spec" ).each(function( index, element ) {
@@ -62,12 +62,13 @@ $(document).ready(function(event) {
 		          //console.log(error);
 		      }
 		});
-		$("#notify").slideToggle();
+		$("#notify").stop().slideToggle();
+		swipeDislike();
 	});
 
-	document.ontouchstart = function(e){ 
-	    e.preventDefault(); 
-	}
+	// document.ontouchstart = function(e){ 
+	//     e.preventDefault(); 
+	// }
 
 	$("div#swipe_like").on( "click", function() {
 		swipeLike();
@@ -120,9 +121,11 @@ $(document).ready(function(event) {
 
 	function addNewProfile() {
 		var mess = list[Math.floor(list.length * Math.random())];
-		console.log(mess);
+		//console.log(mess.entities.urls[0].url);
+		var url = mess.entities.urls.length > 0 ? mess.entities.urls[0].url : null ;
+
 		$("div.content").prepend('<div class="photo" id="photo" )">'
-		+ '<span class="feedmessage"><div class="inner" url="'+ mess.entities.urls[0].url +'">' 
+		+ '<span class="feedmessage"><div class="inner" url="'+ url +'">' 
 		+ mess.text
 		+ '</div></span>'
 		+ '<span class="meta">' 

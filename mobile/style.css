@@ -63,7 +63,7 @@ div.photo {
 	display: block;
 	margin-left: auto;
 	margin-right: auto;
-	width:275px;
+	width:285px;
 	height:365px;
 	border:1px solid #a6a9aa;
 	border-radius: 8px;
@@ -175,7 +175,7 @@ span.feedmessage div.inner {
 }
 
 .rate:nth-child(1) {
-	margin-left: 4px;
+	margin-left: 14px;
 	background: url(src/strategy.png);
 	background-size: 40px;
 	background-position: center;
