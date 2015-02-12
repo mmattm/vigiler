@@ -155,8 +155,8 @@
 	<div class="app">
 			<div id="notify">
 				<h2>Specify the activity</h2>
-
-       <div class="switch">
+        <div id="switches"></div>
+       <!-- <div class="switch">
             <input type="checkbox" name="toggle" id="toggle">
             <label for="toggle"></label>
 
@@ -179,7 +179,7 @@
            <label for="toggle4"></label>
 
             <span class="label">Rumors</span>
-      	</div>
+      	</div> -->
         <div class='button blue center notifybutton'>Notify your manager</div>
       </div>
 			<div class="header">

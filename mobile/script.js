@@ -4,6 +4,7 @@ $(document).ready(function(event) {
 	// TWITTER INIT
 	var t = "";
 	var selectedCategory = 0;
+	var categories = [['Stratégies', 'Politiques tarifaires', 'Nouveaux produits', 'Résultats financiers'],['Valeur perçue', 'Identité de l’entreprise', 'Retombée d’une campagne', 'Perception des consommateurs'],['Recherches en cours', 'Dépôts de brevets', 'technologie', 'Rumeurs'],['Protection', 'comportements collaborateurs', 'vulnérabilités', 'voyages']]
 
 	var searchTerm = 'Mercedes Benz',
 		searchTerm2 = 'Mercedes-Benz'
@@ -19,14 +20,32 @@ $(document).ready(function(event) {
 	});
 
 
-	$(".rate").bind('touchstart', function(){
-		$("#notify").stop().slideToggle();
+	$(".rate").bind('touchstart click', function(){
+		if ( $("#notify").is(":visible")) {
+		   $("#notify").stop().slideUp();
+		   $("#switches").empty();
+		   $('.rate').removeClass("active");
+		   return;
+		} 
+
+		
+		$(this).addClass("active");
+		var i = 0;
+		categories[$(this).index()].forEach(function(entry) {
+		    $("#switches").append( '<div class="switch"><input type="checkbox" class="spec" name="toggle'+i+'" id="toggle'+i+'"><label for="toggle'+i+'"></label><span class="label">'+entry+'</span></div>' );
+		    i++;
+		});
+		
+
+		$("#notify").stop().slideDown();
 		selectedCategory = $(this).attr('veille-id');
-		console.log(selectedCategory);
 	});
 
 	// SAVE
-	$(".notifybutton").bind('touchstart', function(){
+	$(".notifybutton").on('click touchstart', function () {
+	//$(document.body).on('click touchstart', '.notifybutton' ,function(){
+
+		$('.rate').removeClass("active");
 		var eventsholded = [];
 
 		$( ".spec" ).each(function( index, element ) {
@@ -34,6 +53,7 @@ $(document).ready(function(event) {
 			eventsholded[index] = checkboxStatus;
 			
 		});
+		console.log($( ".spec" ));
 
 		var now = new Date().getTime()
 	
@@ -64,6 +84,7 @@ $(document).ready(function(event) {
 		});
 		$("#notify").stop().slideToggle();
 		swipeDislike();
+		$("#switches").empty();
 	});
 
 	// document.ontouchstart = function(e){ 
@@ -141,13 +162,9 @@ $(document).ready(function(event) {
 		        $(this).html($(this).text().replace(regex2, "<span class='blue'>"+searchTerm+"</span>"));
 		  });
 
-		swipe();
-
-		
+		swipe();	
 	}
-
 });
-
 
 
 function parseTwitterDate(tdate) {

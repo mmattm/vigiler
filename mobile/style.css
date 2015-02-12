@@ -41,7 +41,8 @@ body {
 	font-size: 34px;
 }
 #notify span.label {
-	font-size: 14px;
+	font-size: 12px;
+	line-height: 12px;
 }
 .header {
 	background-color: #FFF;
@@ -172,6 +173,13 @@ span.feedmessage div.inner {
 	border: 5px solid #f0f0f0;
 	float: left;
 	box-shadow: 1px 1px 1px 0px #e9e9e9;
+	transition: all 0.5s ease 0s;
+	-moz-transition: all 0.5s ease 0s;
+	-webkit-transition: all 0.5s ease 0s;
+}
+
+.rate.active {
+	border: 5px solid #1c00f0;
 }
 
 .rate:nth-child(1) {
