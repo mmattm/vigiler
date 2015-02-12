@@ -147,7 +147,7 @@
                                 <input type="text" class="form-control" placeholder="Mercedes, Benz">
                                 <span class="input-group-btn">
                                 <button class="btn btn-default" type="button">
-                                    <i class="fa fa-search"></i>
+                                    <i class="fa fa-eyedropper"></i>
                                 </button>
                             </span>
                             </div>
