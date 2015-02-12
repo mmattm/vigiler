@@ -39,28 +39,28 @@ var vigiler = (function() {
 
     var categories = [
         [
-            "<i title=\"Stratégies\" class=\"fa fa-diamond fa-spin\"><\/i>",
-            "<i title=\"Politique tarifaires\" class=\"fa fa-usd\"><\/i>",
-            "<i title=\"Nouveaux produits ou services\" class=\"fa fa-leaf\"><\/i>",
-            "<i title=\"Résultats financiers\" class=\"fa fa-area-chart\"><\/i>"
+            "<i title=\"Stratégies\" class=\"fa fa-diamond fa-2x fa-spin\"><\/i>",
+            "<i title=\"Politique tarifaires\" class=\"fa fa-usd fa-2x\"><\/i>",
+            "<i title=\"Nouveaux produits ou services\" class=\"fa fa-leaf fa-2x\"><\/i>",
+            "<i title=\"Résultats financiers\" class=\"fa fa-area-chart fa-2x\"><\/i>"
         ],
         [
-            "<i title=\"Valeur\" class=\"fa fa-money\"><\/i>",
-            "<i title=\"Identité de l'entreprise\" class=\"fa-glass\"><\/i>",
-            "<i title=\"Retombée d'une campagne\" class=\"fa fa-graduation-cap\"><\/i>",
-            "<i title=\"Perception des consommateurs\" class=\"fa fa-paw\"><\/i>"
+            "<i title=\"Valeur\" class=\"fa fa-money fa-2x\"><\/i>",
+            "<i title=\"Identité de l'entreprise\" class=\"fa fa-flask fa-2x\"><\/i>",
+            "<i title=\"Retombée d'une campagne\" class=\"fa fa-graduation-cap fa-2x\"><\/i>",
+            "<i title=\"Perception des consommateurs\" class=\"fa fa-paw fa-2x\"><\/i>"
         ],
         [
-            "<i title=\"Recherches en cours\" class=\"fa fa-gavel fa-spin\"><\/i>",
-            "<i title=\"Dépots de brevets\" class=\"fa fa-usd\"><\/i>",
-            "<i title=\"Technologie\" class=\"fa fa-meh-o\"><\/i>",
-            "<i title=\"Rumeurs\" class=\"fa fa-fighter-jet\"><\/i>"
+            "<i title=\"Recherches en cours\" class=\"fa fa-gavel fa-spin fa-2x\"><\/i>",
+            "<i title=\"Dépots de brevets\" class=\"fa fa-usd fa-2x\"><\/i>",
+            "<i title=\"Technologie\" class=\"fa fa-meh-o fa-2x\"><\/i>",
+            "<i title=\"Rumeurs\" class=\"fa fa-fighter-jet fa-2x\"><\/i>"
         ],
         [
-            "<i title=\"Protection\" class=\"fa fa-child\"><\/i>",
-            "<i title=\"Comportements des collaborateurs\" class=\"fa fa-clock-o\"><\/i>",
-            "<i title=\"Vulnérabilité\" class=\"fa fa-bomb\"><\/i>",
-            "<i title=\"Voyages\" class=\"fa fa-building-o\"><\/i>"
+            "<i title=\"Protection\" class=\"fa fa-child fa-2x\"><\/i>",
+            "<i title=\"Comportements des collaborateurs\" class=\"fa fa-clock-o fa-2x\"><\/i>",
+            "<i title=\"Vulnérabilité\" class=\"fa fa-bomb fa-2x\"><\/i>",
+            "<i title=\"Voyages\" class=\"fa fa-building-o fa-2x\"><\/i>"
         ]
     ];
         
@@ -99,18 +99,6 @@ var vigiler = (function() {
         alert += "                <div class=\"panel panel-default\">";
         alert += "                    <div class=\"panel-heading\">";
         alert += "                        <h3>" + getDate(title) + "<\/h3>";
-        alert += "                    <\/div>";
-        alert += "                    <!-- \/.panel-heading -->";
-        alert += "                    <div class=\"panel-body\">";
-        alert += "                        <h3 style=\"margin-top:-5px;\"><i title=\"Contenu\" class=\"fa fa-file-text-o\"><\/i><\/h3>";
-        alert += "                        <p>" + content + "<\/p>";
-        alert += "                        <h3><i title=\"Lien\" class=\"fa fa-level-up\"><\/i><\/h3>";
-        alert += "                        <p> <a href=\"" + link + "\" target=\"_blank\">http:\\/\\/t.co\\/X9rA5JOFkB<\/a> <\/p>";
-        alert += "                        <h3><i title=\"Source\" class=\"fa fa-globe\"><\/i><\/h3>";
-        alert += "                        <p>" + source + "<\/p>";
-        alert += "                        <h3><i title=\"Mot-clés\" class=\"fa fa-key fa-1x\"><\/i><\/h3>";
-        alert += "                        <p>" + keywords.replace(" ", ", ") + "<\/p>";
-        alert += "                        <h3><i title=\"Types\" class=\"fa fa-flag\"><\/i><\/h3>";
         alert += "                        <p>";
 
         cats.forEach(function(elm, index, array) {
@@ -119,6 +107,21 @@ var vigiler = (function() {
         });
 
         alert += "                        <\/p>";
+        alert += "                    <\/div>";
+        alert += "                    <!-- \/.panel-heading -->";
+        alert += "                    <div class=\"panel-body\">";
+        alert += "                        <h3 style=\"margin-top:-5px;\"><i title=\"Contenu\" class=\"fa fa-file-text-o\"><\/i><\/h3>";
+        alert += "                        <p>" + content + "<\/p>";
+
+        if (link != 'null') {
+            alert += "                        <h3><i title=\"Lien\" class=\"fa fa-level-up\"><\/i><\/h3>";
+            alert += "                        <p> <a href=\"" + link + "\" target=\"_blank\">" + link + "<\/a> <\/p>";
+        }
+
+        alert += "                        <h3><i title=\"Source\" class=\"fa fa-globe\"><\/i><\/h3>";
+        alert += "                        <p>" + source + "<\/p>";
+        alert += "                        <h3><i title=\"Mot-clés\" class=\"fa fa-key fa-1x\"><\/i><\/h3>";
+        alert += "                        <p>" + keywords.replace(" ", ", ") + "<\/p>";
         alert += "                    <\/div>";
         alert += "                <\/div>";
         alert += "                <!-- \/.panel -->";
