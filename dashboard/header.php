@@ -40,7 +40,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a href="index.html"><img src="./vigiler_logo.png"></a>
+                <a href="index.php"><img src="./vigiler_logo.png"></a>
             </div>
             <!-- /.navbar-header -->
 

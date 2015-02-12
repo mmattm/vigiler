@@ -37,14 +37,28 @@ $(function() {
 
 var vigiler = (function() {
 
-    var alertsa = 0;
-    var alertsb = 0;
-    var alertsc = 0;
-    var alertsd = 0;
+    var nums = [0, 0, 0, 0];
         
     function init(config)
     {
-        
+        $.getJSON("../mobile/general.json", function(data) {
+            //console.log(data);
+            var alerts = data[0];
+            $.each( alerts, function( key, val ) {
+                var alert = val;
+                $.each( alert, function( key, val ) {
+                    var alert = val;
+                    if (key == "veille") {
+                        nums[val] += 1;
+                        
+                        // veille concurrence
+                        if (veille == 1) {
+
+                        }
+                    }
+                });
+            });
+        });
     }
     
     function getAlerts()
