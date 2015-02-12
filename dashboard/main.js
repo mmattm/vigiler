@@ -36,6 +36,33 @@ $(function() {
 var vigiler = (function() {
 
     var nums = [0, 0, 0, 0];
+
+    var categories = [
+        [
+            "<i title=\"Stratégies\" class=\"fa fa-diamond fa-spin\"><\/i>",
+            "<i title=\"Politique tarifaires\" class=\"fa fa-usd\"><\/i>",
+            "<i title=\"Nouveaux produits ou services\" class=\"fa fa-leaf\"><\/i>",
+            "<i title=\"Résultats financiers\" class=\"fa fa-area-chart\"><\/i>"
+        ],
+        [
+            "<i title=\"Valeur\" class=\"fa fa-money\"><\/i>",
+            "<i title=\"Identité de l'entreprise\" class=\"fa-glass\"><\/i>",
+            "<i title=\"Retombée d'une campagne\" class=\"fa fa-graduation-cap\"><\/i>",
+            "<i title=\"Perception des consommateurs\" class=\"fa fa-paw\"><\/i>"
+        ],
+        [
+            "<i title=\"Recherches en cours\" class=\"fa fa-gavel fa-spin\"><\/i>",
+            "<i title=\"Dépots de brevets\" class=\"fa fa-usd\"><\/i>",
+            "<i title=\"Technologie\" class=\"fa fa-meh-o\"><\/i>",
+            "<i title=\"Rumeurs\" class=\"fa fa-fighter-jet\"><\/i>"
+        ],
+        [
+            "<i title=\"Protection\" class=\"fa fa-child\"><\/i>",
+            "<i title=\"Comportements des collaborateurs\" class=\"fa fa-clock-o\"><\/i>",
+            "<i title=\"Vulnérabilité\" class=\"fa fa-bomb\"><\/i>",
+            "<i title=\"Voyages\" class=\"fa fa-building-o\"><\/i>"
+        ]
+    ];
         
     function init(config)
     {
@@ -45,8 +72,18 @@ var vigiler = (function() {
             $.each( alerts, function( key, val ) {
                 var alert = key;
                 var infos = val;
-                if (val["veille"] == $("#alerts").attr("veille")) {
-                    createAlert(alert, val["content"], val["url"], val["source"], val["keywords"], val["category"]);
+                var veille = parseInt($("#alerts").attr("veille"))-1;
+                console.log("veille " + val["veille"]);
+                console.log("title " + alert);
+                if (val["veille"] == veille) {
+                    var cats = val["category"];
+                    var actives = [];
+                    cats.forEach(function(elm, index, array) {
+                        if (elm) {
+                            actives[index] = categories[veille][index];
+                        }
+                    });
+                    createAlert(alert, val["content"], val["url"], val["source"], val["keywords"], actives);
                 }
             });
         });
@@ -58,7 +95,7 @@ var vigiler = (function() {
         alert += "          <div class=\"col-xs-12 col-sm-6 col-md-4 col-lg-3\">";
         alert += "                <div class=\"panel panel-default\">";
         alert += "                    <div class=\"panel-heading\">";
-        alert += "                        <h3>" + title + "<\/h3>";
+        alert += "                        <h3>" + getDate(title) + "<\/h3>";
         alert += "                    <\/div>";
         alert += "                    <!-- \/.panel-heading -->";
         alert += "                    <div class=\"panel-body\">";
@@ -72,10 +109,12 @@ var vigiler = (function() {
         alert += "                        <p>" + keywords.replace(" ", ", ") + "<\/p>";
         alert += "                        <h3><i title=\"Types\" class=\"fa fa-flag\"><\/i><\/h3>";
         alert += "                        <p>";
-        alert += "                            <i title=\"Stratégies\" class=\"fa fa-diamond\"><\/i> | ";
-        alert += "                            <i title=\"Politique tarifaires\" class=\"fa fa-usd\"><\/i> | ";
-        alert += "                            <i title=\"Nouveaux produits ou services\" class=\"fa fa-leaf\"><\/i> | ";
-        alert += "                            <i title=\"Résultats financiers\" class=\"fa fa-area-chart\"><\/i>";
+
+        cats.forEach(function(elm, index, array) {
+            alert += elm;
+            if (index < array.length-1) alert += " | ";
+        });
+
         alert += "                        <\/p>";
         alert += "                    <\/div>";
         alert += "                <\/div>";
@@ -111,6 +150,19 @@ var vigiler = (function() {
         // </div>
 
         $("#alerts").append(alert);
+    }
+
+    function getDate(UNIX_timestamp){
+        var a = new Date(UNIX_timestamp*1000);
+        var months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+        var year = a.getFullYear();
+        var month = months[a.getMonth()];
+        var date = a.getDate();
+        var hour = a.getHours();
+        var min = a.getMinutes();
+        var sec = a.getSeconds();
+        var time = date + ', ' + month + ' ' + year + ' ' + hour + ':' + min + ':' + sec ;
+        return time;
     }
 
     return { init : init };
