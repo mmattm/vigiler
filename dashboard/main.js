@@ -66,11 +66,12 @@ var vigiler = (function() {
         
     function init(config)
     {
+        var veille = parseInt($("#alerts").attr("veille"))-1;
+        
         $.getJSON("../general.json", function(data) {
             $.each( data, function( key, val ) {
                 var firstKey = getFirstKey(val);
                 var infos = val[firstKey]; // firstKey = timestamp
-                var veille = parseInt($("#alerts").attr("veille"))-1;
                 nums[infos["veille"]-1]+=1;
                 if (infos["veille"]-1 == veille) {
                     var cats = infos["category"];
