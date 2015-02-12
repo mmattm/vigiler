@@ -20,7 +20,7 @@ $(document).ready(function(event) {
 	});
 
 
-	$(".rate").bind('touchstart click', function(){
+	$(".rate").bind('click', function(){
 		if ( $("#notify").is(":visible")) {
 		   $("#notify").stop().slideUp();
 		   $("#switches").empty();
