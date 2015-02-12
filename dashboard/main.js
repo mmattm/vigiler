@@ -41,29 +41,78 @@ var vigiler = (function() {
         
     function init(config)
     {
-        $.getJSON("../mobile/general.json", function(data) {
+        $.getJSON("../general.json", function(data) {
             //console.log(data);
             var alerts = data[0];
             $.each( alerts, function( key, val ) {
-                var alert = val;
-                $.each( alert, function( key, val ) {
-                    var alert = val;
-                    if (key == "veille") {
-                        nums[val] += 1;
-                        
-                        // veille concurrence
-                        if (veille == 1) {
-
-                        }
-                    }
-                });
+                var alert = key;
+                var infos = val;
+                if (val["veille"] == $("#alerts").attr("veille")) {
+                    createAlert(alert, val["content"], val["url"], val["source"], val["keywords"], val["category"]);
+                }
             });
         });
     }
     
-    function getAlerts()
+    function createAlert(title, content, link, source, keywords, cats)
     {
-        
+        var alert="";
+        alert += "          <div class=\"col-xs-12 col-sm-6 col-md-4 col-lg-3\">";
+        alert += "                <div class=\"panel panel-default\">";
+        alert += "                    <div class=\"panel-heading\">";
+        alert += "                        <h3>" + title + "<\/h3>";
+        alert += "                    <\/div>";
+        alert += "                    <!-- \/.panel-heading -->";
+        alert += "                    <div class=\"panel-body\">";
+        alert += "                        <h3 style=\"margin-top:-5px;\"><i title=\"Contenu\" class=\"fa fa-file-text-o\"><\/i><\/h3>";
+        alert += "                        <p>" + content + "<\/p>";
+        alert += "                        <h3><i title=\"Lien\" class=\"fa fa-level-up\"><\/i><\/h3>";
+        alert += "                        <p> <a href=\"" + link + "\" target=\"_blank\">http:\\/\\/t.co\\/X9rA5JOFkB<\/a> <\/p>";
+        alert += "                        <h3><i title=\"Source\" class=\"fa fa-globe\"><\/i><\/h3>";
+        alert += "                        <p>" + source + "<\/p>";
+        alert += "                        <h3><i title=\"Mot-clés\" class=\"fa fa-key fa-1x\"><\/i><\/h3>";
+        alert += "                        <p>" + keywords.replace(" ", ", ") + "<\/p>";
+        alert += "                        <h3><i title=\"Types\" class=\"fa fa-flag\"><\/i><\/h3>";
+        alert += "                        <p>";
+        alert += "                            <i title=\"Stratégies\" class=\"fa fa-diamond\"><\/i> | ";
+        alert += "                            <i title=\"Politique tarifaires\" class=\"fa fa-usd\"><\/i> | ";
+        alert += "                            <i title=\"Nouveaux produits ou services\" class=\"fa fa-leaf\"><\/i> | ";
+        alert += "                            <i title=\"Résultats financiers\" class=\"fa fa-area-chart\"><\/i>";
+        alert += "                        <\/p>";
+        alert += "                    <\/div>";
+        alert += "                <\/div>";
+        alert += "                <!-- \/.panel -->";
+        alert += "            <\/div>";
+
+
+        // <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+        //     <div class="panel panel-default">
+        //         <div class="panel-heading">
+        //             <h3>Timestamp</h3>
+        //         </div>
+        //         <!-- /.panel-heading -->
+        //         <div class="panel-body">
+        //             <h3 style="margin-top:-5px;"><i title="Contenu" class="fa fa-file-text-o"></i></h3>
+        //             <p>RT @mercedesashley: Do not buy a Mercedes Benz at all costs. I have been driving them since I was 18 and I am over it. They (cont) http:\/\/t\u2026</p>
+        //             <h3><i title="Lien" class="fa fa-level-up"></i></h3>
+        //             <p> <a href="http:\/\/t.co\/X9rA5JOFkB" target="_blank">http:\/\/t.co\/X9rA5JOFkB</a> </p>
+        //             <h3><i title="Source" class="fa fa-globe"></i></h3>
+        //             <p>Twitter</p>
+        //             <h3><i title="Mot-clés" class="fa fa-key fa-1x"></i></h3>
+        //             <p>Mercedes, Benz</p>
+        //             <h3><i title="Types" class="fa fa-flag"></i></h3>
+        //             <p>
+        //                 <i title="Stratégies" class="fa fa-diamond"></i> | 
+        //                 <i title="Politique tarifaires" class="fa fa-usd"></i> | 
+        //                 <i title="Nouveaux produits ou services" class="fa fa-leaf"></i> | 
+        //                 <i title="Résultats financiers" class="fa fa-area-chart"></i>
+        //             </p>
+        //         </div>
+        //     </div>
+        //     <!-- /.panel -->
+        // </div>
+
+        $("#alerts").append(alert);
     }
 
     return { init : init };
