@@ -67,30 +67,32 @@ var vigiler = (function() {
     function init(config)
     {
         $.getJSON("../general.json", function(data) {
-            //console.log(data);
-            var alerts = data[0];
-            $.each( alerts, function( key, val ) {
-                var alert = key;
-                var infos = val;
+            $.each( data, function( key, val ) {
+                var firstKey = getFirstKey(val);
+                var infos = val[firstKey]; // firstKey = timestamp
                 var veille = parseInt($("#alerts").attr("veille"))-1;
-                console.log("veille " + val["veille"]);
-                console.log("title " + alert);
-                if (val["veille"] == veille) {
-                    var cats = val["category"];
+                nums[infos["veille"]-1]+=1;
+                if (infos["veille"]-1 == veille) {
+                    var cats = infos["category"];
                     var actives = [];
                     cats.forEach(function(elm, index, array) {
-                        if (elm) {
+                        if (elm == 1) {
                             actives[index] = categories[veille][index];
                         }
                     });
-                    createAlert(alert, val["content"], val["url"], val["source"], val["keywords"], actives);
+                    createAlert(firstKey, infos["content"], infos["url"], infos["source"], infos["keywords"], actives);
                 }
             });
+            
+
+            $(".huge").each(function(key) { $(this).text(nums[key]); });
+            //$(".progress-bar").each(function(key) { $(this).css('width', +'1%').attr('aria-valuenow', 1); });
         });
     }
     
     function createAlert(title, content, link, source, keywords, cats)
-    {
+    {   
+
         var alert="";
         alert += "          <div class=\"col-xs-12 col-sm-6 col-md-4 col-lg-3\">";
         alert += "                <div class=\"panel panel-default\">";
@@ -168,4 +170,12 @@ var vigiler = (function() {
     return { init : init };
 
 })();
+
+
+// UTILS //
+
+function getFirstKey( data ) {
+      for (elem in data ) 
+          return elem;
+ }
 

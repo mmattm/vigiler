@@ -20,7 +20,7 @@ include 'header.php';
                                     <i class="fa fa-eye-slash fa-5x"></i>
                                 </div>
                                 <div class="col-xs-9 text-right">
-                                    <div class="huge">26</div>
+                                    <div class="huge">0</div>
                                     <div>Alertes Concurrence !</div>
                                 </div>
                             </div>
@@ -42,7 +42,7 @@ include 'header.php';
                                     <i class="fa fa-star fa-5x"></i>
                                 </div>
                                 <div class="col-xs-9 text-right">
-                                    <div class="huge">12</div>
+                                    <div class="huge">0</div>
                                     <div>Alertes Image!</div>
                                 </div>
                             </div>
@@ -64,7 +64,7 @@ include 'header.php';
                                     <i class="fa fa-cogs fa-5x"></i>
                                 </div>
                                 <div class="col-xs-9 text-right">
-                                    <div class="huge">124</div>
+                                    <div class="huge">0</div>
                                     <div>Alertes Technologies !</div>
                                 </div>
                             </div>
@@ -86,7 +86,7 @@ include 'header.php';
                                     <i class="fa fa-binoculars fa-5x"></i>
                                 </div>
                                 <div class="col-xs-9 text-right">
-                                    <div class="huge">13</div>
+                                    <div class="huge">0</div>
                                     <div>Alertes Protection !</div>
                                 </div>
                             </div>
