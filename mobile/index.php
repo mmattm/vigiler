@@ -11,7 +11,7 @@
     
       <!-- Make the app title different than the page title. -->
       <meta name="apple-mobile-web-app-title"
-            content="iOS 8 web app">
+            content="Vigiler">
     
       <!-- Configure the status bar. -->
       <meta name="apple-mobile-web-app-status-bar-style"
@@ -53,7 +53,7 @@
             rel="apple-touch-icon-precomposed">
     
       <!-- iPhone retina icon (iOS < 7) -->
-      <link href="apple-touch-icon-precomposed-114.png"
+      <link href="src/apple-touch-icon-precomposed-114.png"
             sizes="114x114"
             rel="apple-touch-icon-precomposed">
     
@@ -140,7 +140,7 @@
     <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenLite.min.js"></script>
     <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.15.0/utils/Draggable.min.js"></script>
-
+    <script src="switch/switchery.js"></script>
     <link rel="stylesheet" href="switch/switchery.css" />
   </head>
   <body>
@@ -157,31 +157,27 @@
 				<h2>Specify the activity</h2>
 
        <div class="switch">
-            <label class="ios7-switch">
-                <input class="spec" type="checkbox">
-                <span></span>
-            </label>
+            <input type="checkbox" name="toggle" id="toggle">
+            <label for="toggle"></label>
+
             <span class="label">Perceived Value</span>
         </div>
         <div class="switch">
-             <label class="ios7-switch">
-                 <input class="spec" type="checkbox">
-                 <span></span>
-             </label>
+             <input type="checkbox" name="toggle2" id="toggle2">
+             <label for="toggle2"></label>
+
              <span class="label">StakeHolders ident.</span>
        </div>
        <div class="switch">
-           <label class="ios7-switch">
-               <input class="spec" type="checkbox">
-               <span></span>
-           </label>
+           <input type="checkbox" name="toggle3" id="toggle3">
+           <label for="toggle3"></label>
+
            <span class="label">Blogs & Forum</span>
         </div>
         <div class="switch">
-             <label class="ios7-switch">
-                 <input class="spec" type="checkbox">
-                 <span></span>
-             </label>
+           <input type="checkbox" name="toggle4" id="toggle4">
+           <label for="toggle4"></label>
+
             <span class="label">Rumors</span>
       	</div>
         <div class='button blue center notifybutton'>Notify your manager</div>

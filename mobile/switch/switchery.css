@@ -1,99 +1,62 @@
-.ios7-switch {
-    display: inline-block;
-    position: relative;
-    cursor: pointer;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    -webkit-tap-highlight-color: transparent;
-    tap-highlight-color: transparent;
-}
-
-.ios7-switch input {
-    opacity: 0;
-    position: absolute;
-}
-
-.ios7-switch input + span {
-    position: relative;
-    display: inline-block;
-    width: 1.65em;
-    height: 1em;
-    background: white;
-    box-shadow: inset 0 0 0 0.0625em #e9e9e9;
-    border-radius: 0.5em;
-    vertical-align: -0.15em;
-    transition: all 0.40s cubic-bezier(.17,.67,.43,.98);
-}
-
-.ios7-switch:active input + span,
-.ios7-switch input + span:active {
-    box-shadow: inset 0 0 0 0.73em #e9e9e9;
-}
-
-.ios7-switch input + span:after {
-    position: absolute;
-    display: block;
-    content: '';
-    width: 0.875em;
-    height: 0.875em;
-    border-radius: 0.4375em;
-    top: 0.0625em;
-    left: 0.0625em;
-    background: white;
-    box-shadow: inset 0 0 0 0.03em rgba(0,0,0,0.1),
-                0 0 0.05em rgba(0,0,0,0.05),
-                0 0.1em 0.2em rgba(0,0,0,0.2);
-    transition: all 0.25s ease-out;
-}
-
-.ios7-switch:active input + span:after,
-.ios7-switch input + span:active:after {
-    width: 1.15em;
-}
-
-.ios7-switch input:checked + span {
-    box-shadow: inset 0 0 0 0.73em #4cd964;
-}
-
-.ios7-switch input:checked + span:after {
-    left: 0.7125em;
-}
-
-.ios7-switch:active input:checked + span:after,
-.ios7-switch input:checked + span:active:after {
-    left: 0.4375em;
-}
-
-/* accessibility styles */
-.ios7-switch input:focus + span:after {
-    box-shadow: inset 0 0 0 0.03em rgba(0,0,0,0.15),
-                0 0 0.05em rgba(0,0,0,0.08),
-                0 0.1em 0.2em rgba(0,0,0,0.3);
-    background: #fff;
-}
-
-.ios7-switch input:focus + span {
-    box-shadow: inset 0 0 0 0.0625em #dadada;
-}
-
-.ios7-switch input:focus:checked + span {
-    box-shadow: inset 0 0 0 0.73em #33be4b;
-}
-
-/* reset accessibility style on hover */
-.ios7-switch:hover input:focus + span:after {
-    box-shadow: inset 0 0 0 0.03em rgba(0,0,0,0.1),
-                0 0 0.05em rgba(0,0,0,0.05),
-                0 0.1em 0.2em rgba(0,0,0,0.2);
-    background: #fff;
-}
-
-.ios7-switch:hover input:focus + span {
-    box-shadow: inset 0 0 0 0.0625em #e9e9e9;
-}
-
-.ios7-switch:hover input:focus:checked + span {
-    box-shadow: inset 0 0 0 0.73em #4cd964;
-}
+input#toggle, input#toggle2, input#toggle3, input#toggle4 {
+                max-height: 0;
+                max-width: 0;
+                opacity: 0;
+            }
+            
+            /* The following provides the "container" for our toggle in its default (off) state */
+            
+            input#toggle + label, input#toggle2 + label, input#toggle3 + label, input#toggle4 + label {
+                display: block;
+                position: relative;
+                box-shadow: inset 0 0 0px 1px #d5d5d5;
+                text-indent: -5000px;
+                height: 30px;
+                width: 50px;
+                border-radius: 15px;
+                float: left;
+                background: #fff;
+            }
+            
+            /* The following provides the green background for the "on" state of our toggle - it is hidden when the switch is off */
+            
+            input#toggle + label:before, input#toggle2 + label:before, input#toggle3 + label:before, input#toggle4 + label:before {
+                content: "";
+                position: absolute;
+                display: block;
+                height: 30px;
+                width: 30px;
+                top: 0;
+                left: 0;
+                border-radius: 15px;
+                background: rgba(19,191,17,0);
+                -webkit-transition: .25s ease-in-out;
+            }
+            
+            /* The following provides the actual switch and its drop shadow */
+            
+            input#toggle + label:after, input#toggle2 + label:after, input#toggle3 + label:after, input#toggle4 + label:after {
+                content: "";
+                position: absolute;
+                display: block;
+                height: 30px;
+                width: 30px;
+                top: 0;
+                left: 0px;
+                border-radius: 15px;
+                background: white;
+                box-shadow: inset 0 0 0 1px rgba(0,0,0,.2), 0 2px 4px rgba(0,0,0,.2);
+                -webkit-transition: .25s ease-in-out;
+            }
+            
+            /* The following defines the "on" state for the switch */
+            
+            input#toggle:checked + label:before, input#toggle2:checked + label:before, input#toggle3:checked + label:before, input#toggle4:checked + label:before {
+                width: 50px;
+                background: rgba(19,191,17,1);
+            }
+            
+            input#toggle:checked + label:after, input#toggle2:checked + label:after, input#toggle3:checked + label:after, input#toggle4:checked + label:after {
+                left: 20px;
+                box-shadow: inset 0 0 0 1px rgba(19,191,17,1), 0 2px 4px rgba(0,0,0,.2);
+            }
